@@ -1,9 +1,9 @@
 import os
 from cryptography.fernet import Fernet, InvalidToken
 
-# -------- PASSWORD YOU SET --------
+
 PASSWORD = "voldemort"   # change this to any password you want
-# ----------------------------------
+
 
 # Ask user for the password
 user_input = input("Enter password to decrypt files: ")
