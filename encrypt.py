@@ -5,7 +5,7 @@ from cryptography.fernet import Fernet, InvalidToken
 def get_files():
     files = []
     for f in os.listdir():
-        if f in ("thekey.key", "decryptor.py", "encrypt.py", "testd.py"):
+        if f in ("thekey.key", "decrypt.py", "encrypt.py", "testd.py"):
             continue
         if os.path.isfile(f):
             files.append(f)
