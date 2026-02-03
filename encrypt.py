@@ -14,9 +14,8 @@ def get_files():
 files = get_files()
 print("Files:", files)
 
-# ---------------------------
-# 1. DECRYPT WITH OLD KEY
-# ---------------------------
+
+
 if os.path.exists("thekey.key"):
     print("Decrypting old files...")
     old_key = open("thekey.key", "rb").read()
@@ -32,17 +31,13 @@ if os.path.exists("thekey.key"):
 else:
     print("No old key found, skipping decryption.")
 
-# ---------------------------
-# 2. GENERATE NEW KEY
-# ---------------------------
+
 print("Generating NEW key...")
 new_key = Fernet.generate_key()
 open("thekey.key", "wb").write(new_key)
 fernet_new = Fernet(new_key)
 
-# ---------------------------
-# 3. ENCRYPT WITH NEW KEY
-# ---------------------------
+
 print("Encrypting files with new key...")
 for file in files:
     data = open(file, "rb").read()
